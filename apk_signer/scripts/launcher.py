@@ -24,9 +24,17 @@ def cli(apk: str, default: bool, key_path: str, key_alias: str, key_pass: str, k
 
     if run:
        apk = APK(apk_path) 
-       print(check_output('adb uninstall %s' % apk.package, shell=True))
-       print(check_output('adb install "%s"' % apk_path, shell=True))
-       print(check_output('adb shell am start -n %s/%s' % (apk.package, apk.get_main_activity()), shell=True))
+
+       def adb(cmd):
+           try:
+               r = check_output('adb {}'.format(cmd), shell=True) 
+               return r
+           except:
+               return
+           
+       print(adb('uninstall %s' % apk.package))
+       print(adb('install "%s"' % apk_path))
+       print(adb('shell am start -n %s/%s' % (apk.package, apk.get_main_activity())))
 
     return
 
