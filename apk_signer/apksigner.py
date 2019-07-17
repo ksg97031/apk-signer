@@ -77,3 +77,4 @@ def launcher(apk: str, key_path: str, key_alias: str, key_pass: str, ks_pass: st
             p_zipaligned_apk.unlink()
             apk = str(p_signed_apk.resolve())
             print(apk)
+            return apk

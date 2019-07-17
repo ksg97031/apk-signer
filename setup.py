@@ -12,11 +12,11 @@ with open("README.rst", "r") as fh:
 setuptools.setup(
     name="apk-signer",
     python_requires='>=3.5',
-    version="0.0.1",
+    version="0.0.3",
     author="ksg97031",
     author_email="ksg97031@gmail.com",
     description="Sign the apk file",
-    install_requires=['click', 'pathlib'],
+    install_requires=['click', 'pathlib', 'androguard'],
     long_description=long_description,
     long_description_content_type="text/x-rst",
     url="https://github.com/ksg97031/apk-signer",
