@@ -1,13 +1,13 @@
 import sys
 from zipfile import ZipFile
-from pathlib import Path, PosixPath
+from pathlib import Path
 from subprocess import check_output
 from apk_signer import config
 
 
-def remove_meta_inf(p_apk: PosixPath) -> PosixPath:
-    if not isinstance(p_apk, PosixPath):
-        raise Exception("p_apk is not PosixPath type")
+def remove_meta_inf(p_apk):
+    if isinstance(p_apk, str):
+        raise Exception("p_apk is not str type")
 
     zip = ZipFile(p_apk)
     for l in zip.namelist():
@@ -30,7 +30,7 @@ def remove_meta_inf(p_apk: PosixPath) -> PosixPath:
                 
     return p_apk
 
-def apksign(p_apk: PosixPath, key_path: str, key_alias: str, key_pass: str, ks_pass: str) -> PosixPath:
+def apksign(p_apk, key_path: str, key_alias: str, key_pass: str, ks_pass: str):
     try:
         signed_apk_name = p_apk.name.replace("-zipaligned.apk", "-signed.apk")
         psigned_apk = p_apk.parent.joinpath(signed_apk_name)
@@ -44,7 +44,7 @@ def apksign(p_apk: PosixPath, key_path: str, key_alias: str, key_pass: str, ks_p
 
     return psigned_apk 
 
-def zipalign(p_apk: PosixPath) -> PosixPath:
+def zipalign(p_apk):
     try:
         zipaligned_apk_name = p_apk.name.replace("-unsigned.apk", "")
         if zipaligned_apk_name.endswith(".apk"):
