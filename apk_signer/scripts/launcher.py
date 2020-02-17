@@ -15,7 +15,7 @@ from androguard.core.bytecodes.apk import APK
 @click.option('--key_path', default='pyapksigner.jks')
 @click.argument('apk')
 def cli(apk: str, default: bool, key_path: str, key_alias: str, key_pass: str, ks_pass: str, run: bool, run_only: bool):
-    apk = apk_path
+    apk_path = apk
     if not run_only:
         if key_path == 'pyapksigner.jks':
             if not default:
