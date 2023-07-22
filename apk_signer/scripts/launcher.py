@@ -19,8 +19,7 @@ def cli(apk: str, default: bool, key_path: str, key_alias: str, key_pass: str, k
     if not run_only:
         if key_path == 'pyapksigner.jks':
             if not default:
-                print("[Warning] Signing with default keystore.")
-                print("[Warning] Please pass --key_path, --key_alias, --key_pass, --ks_pass parameter, if you want to use your keystore")
+                print("Warning: Pass the --key_path, --key_alias, --key_pass, and --ks_pass parameters if you want to use your own keystore."
             key_path = str(config.ROOT_DIR.joinpath(key_path).resolve())
 
         apk_path = launcher(apk, key_path, key_alias, key_pass, ks_pass)
