@@ -6,7 +6,7 @@ Easy signing with apk-signer
 Installation
 ------------
 
-|Py-Versions| |PyPI-Downloads|
+|PyPI-Downloads|
 
 .. code:: sh
 

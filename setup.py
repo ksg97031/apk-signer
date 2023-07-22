@@ -12,7 +12,7 @@ with open("README.rst", "r") as fh:
 setuptools.setup(
     name="apk-signer",
     python_requires='>=3.5',
-    version="1.1.1",
+    version="1.1.2",
     author="ksg97031",
     author_email="ksg97031@gmail.com",
     description="Sign the apk file",
