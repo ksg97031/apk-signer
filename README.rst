@@ -14,9 +14,7 @@ Installation
     
 Prerequirement
 ----------------
-
-| You should install 'apksigner', 'zipalign', 'adb' and add it to your PATH environment variable.
-| Download: `Ansroid SDK <https://developer.android.com/studio/releases/platform-tools?hl=ko>`_
+| Download: `Android SDK <https://developer.android.com/studio/releases/platform-tools?hl=ko>`_
 
 Usage
 ------------
